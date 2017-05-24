@@ -1,0 +1,30 @@
+{
+  "name": "garageapi",
+  "version": "1.0.0",
+  "description": "api for garage door status",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chrisnorthnj/garageapi.git"
+  },
+  "keywords": [
+    "garage",
+    "door",
+    "api",
+    "raspberry",
+    "pi"
+  ],
+  "author": "Chris Santaniello",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/chrisnorthnj/garageapi/issues"
+  },
+  "homepage": "https://github.com/chrisnorthnj/garageapi#readme",
+  "dependencies": {
+    "connect": "^3.6.2",
+    "express": "^4.15.3"
+  }
+}
