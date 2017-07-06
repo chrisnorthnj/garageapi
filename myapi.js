@@ -20,8 +20,19 @@
 
 var http      = require('http');
 var express   = require('express');
+var gpio      = require('rpi-gpio');
 
 var app       = express();
+
+ 
+gpio.setup(15, gpio.DIR_IN);
+ 
+function readInput(pin) {
+    gpio.read(pin, function(err, value) {
+        console.log('Retrieved value of pin ' + pin + ': ' + value);
+        return(value);
+    });
+}
 
 // dummy input port values for our example
 var inputs = [    { pin: '11', gpio: '17', value: 1 },
@@ -37,7 +48,8 @@ app.use(express.static(__dirname));
 app.get('/inputs/:id', function (req, res) {
   // send an object as a JSON string
   console.log('id = ' + req.params.id);
-  res.send(inputs[req.params.id]);
+  // res.send(inputs[req.params.id]);
+  res.send(readInput(req.params.id));
 }); // apt.get()
 
 // Express route for incoming requests for a list of all inputs
